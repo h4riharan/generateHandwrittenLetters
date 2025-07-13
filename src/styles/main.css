@@ -1,0 +1,212 @@
+body {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 20px;
+}
+.app {
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Indie Flower', cursive !important;
+    color: #b4883e;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.letter-form {
+    background: #fff;
+    border: 2px solid #e0cfa9;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+}
+
+.letter-form input,
+.letter-form textarea {
+    font-family: inherit;
+    font-size: 1.1rem;
+    border: 1.5px solid #e0cfa9;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+    background: #fffbe7;
+    resize: vertical;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+}
+
+.letter-form button,
+.greeting-card button,
+.download-btn {
+    background: #ffb347;
+    color: #fff;
+    font-family: inherit;
+    font-size: 1.1rem;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    transition: background 0.2s;
+}
+
+.letter-form button:hover,
+.greeting-card button:hover,
+.download-btn:hover {
+    background: #ff9800;
+}
+
+.greeting-card {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5rem;
+    background: #fffbe7 url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+    padding: 2rem 2.5rem 4rem 2.5rem;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    width: 90%;
+    max-width: 440px;
+    margin: 2rem auto;
+    min-height: 320px;
+    position: relative;
+    border: 2px solid #e0cfa9;
+    overflow: visible;
+    transition: all 0.2s ease-in-out;
+}
+
+.greeting-card h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.greeting-card p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.writer-signature {
+  font-size: 1.2rem;
+  position: absolute;
+  right: 2.5rem;
+  bottom: 2.5rem;
+  color: #444;
+  opacity: 0.85;
+}
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+.style-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.style-controls select {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #e0cfa9;
+  background-color: #fffbe7;
+  margin-left: 8px;
+  margin-right: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.style-controls label {
+  font-family: inherit;
+  margin-right: 16px;
+}
+.app-footer {
+  font-family: 'courier';
+  text-align: center;
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+}
+
+.app-footer a {
+  color: #b4883e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+}
+
+
+@media (max-width: 600px) {
+  .letter-form {
+    padding: 16px;
+  }
+
+  .letter-form textarea {
+    font-size: 1rem;
+  }
+
+  .button-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .download-btn {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+
+  .style-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .style-controls label {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .style-controls select {
+    width: 100%;
+  }
+
+  .greeting-card {
+    font-size: 1.2rem;
+    padding: 1.5rem;
+  }
+
+  .writer-signature {
+    font-size: 1rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .greeting-card, .greeting-card * {
+      visibility: visible;
+  }
+  .greeting-card {
+      position: absolute;
+      left: 0;
+      top: 0;
+      box-shadow: none;
+  }
+}
