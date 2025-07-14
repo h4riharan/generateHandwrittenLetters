@@ -127,6 +127,27 @@ h1, h2, h3 {
   font-family: inherit;
   margin-right: 16px;
 }
+.style-controls input{
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1.5px solid #e0cfa9;
+  background-color: #fffbe7;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.letter-date {
+  font-size: 1.1rem;
+  text-align: right;
+  margin-bottom: 1.2rem;
+  color: #444;
+  opacity: 0.85;
+  font-family: inherit;
+}
+
 .app-footer {
   font-family: 'courier';
   text-align: center;

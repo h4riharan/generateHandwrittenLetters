@@ -7,9 +7,10 @@ export interface GreetingCardProps {
     writer?: string;
     font?: string;
     background?: string;
+    date?: string;
 }
 
-const GreetingCard: React.FC<GreetingCardProps> = ({ content, writer, font, background }) => {
+const GreetingCard: React.FC<GreetingCardProps> = ({ content, writer, font, background, date }) => {
     const cardRef = useRef<HTMLDivElement>(null);
 
     const handleDownloadImage = async () => {
@@ -76,6 +77,11 @@ const GreetingCard: React.FC<GreetingCardProps> = ({ content, writer, font, back
                     backgroundPosition: 'center',
                 }}
             >
+                {date && (
+                    <div className="letter-date">
+                        {date}
+                    </div>
+                )}
                 <p>{content}</p>
                 {writer && <div className="writer-signature">{writer}</div>}
             </div>

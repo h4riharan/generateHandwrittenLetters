@@ -7,15 +7,31 @@ const App: React.FC = () => {
     const [writer, setWriter] = useState<string>('');
     const [font, setFont] = useState<string>('Indie Flower');
     const [background, setBackground] = useState<string>('paper');
+    const [date, setDate] = useState<string>(new Date().toLocaleDateString('en-GB', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric',
+    }));
 
 
     const handleLetterSubmit = (content: string, name: string) => {
         setLetterContent(content);
         setWriter(name);
     };
+    const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const rawDate = e.target.value; // e.g. "2025-07-13"
+        const formatted = new Date(rawDate).toLocaleDateString('en-GB', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric',
+        });
+        setDate(formatted);
+    };
+
+
 
     return (
-        
+
         <div className="app">
             <h1>Handwritten Letter Generator</h1>
             <LetterForm onSubmit={handleLetterSubmit} />
@@ -40,8 +56,18 @@ const App: React.FC = () => {
                             <option value="#f0f0f0">Plain Gray</option>
                         </select>
                     </label>
+                    <label>
+                        Date:
+                        <input
+                            type="date"
+                            value={date}
+                            onChange={handleDateChange}
+                        />
+                    </label>
                 </div>
             )}
+
+
 
             {letterContent && (
                 <GreetingCard
@@ -49,6 +75,7 @@ const App: React.FC = () => {
                     writer={writer}
                     font={font}
                     background={background}
+                    date={date}
                 />
             )}
             <footer className="app-footer">
